@@ -6,12 +6,14 @@ import java.nio.file.*;
 
 public class HttpServer {
 
-    private static final String STATIC_DIR = "simple-http-server/static";
+    private static final Path BASE_DIR =
+            Paths.get("simple-http-server/static").toAbsolutePath().normalize();
 
     public static void main(String[] args) throws IOException {
 
         ServerSocket serverSocket = new ServerSocket(8080);
         System.out.println("Server started at http://localhost:8080");
+        System.out.println("Serving files from: " + BASE_DIR);
 
         while (true) {
             Socket clientSocket = serverSocket.accept();
@@ -30,32 +32,47 @@ public class HttpServer {
             System.out.println(requestLine);
 
             String[] parts = requestLine.split(" ");
-            String path = parts[1];
+            String rawPath = parts[1];
 
-            if (path.equals("/")) {
-                path = "/index.html";
+            if (rawPath.equals("/")) {
+                rawPath = "/index.html";
             }
 
-            if (path.contains("..")) {
-                send404(out);
-                clientSocket.close();
-                continue;
-            }
+            try {
+                Path resolved = BASE_DIR
+                        .resolve(rawPath.substring(1))
+                        .normalize();
 
-            Path filePath = Paths.get(STATIC_DIR, path.substring(1));
+                if (!resolved.startsWith(BASE_DIR)) {
+                    send404(out);
+                    clientSocket.close();
+                    continue;
+                }
+                
+                Path realPath = resolved.toRealPath();
 
-            if (Files.exists(filePath) && !Files.isDirectory(filePath)) {
+                if (!realPath.startsWith(BASE_DIR)) {
+                    send404(out);
+                    clientSocket.close();
+                    continue;
+                }
 
-                byte[] fileBytes = Files.readAllBytes(filePath);
-                String contentType = getContentType(filePath.toString());
+                if (Files.exists(realPath) && !Files.isDirectory(realPath)) {
 
-                out.write(("HTTP/1.1 200 OK\r\n").getBytes());
-                out.write(("Content-Type: " + contentType + "\r\n").getBytes());
-                out.write(("Content-Length: " + fileBytes.length + "\r\n").getBytes());
-                out.write(("\r\n").getBytes());
-                out.write(fileBytes);
+                    byte[] fileBytes = Files.readAllBytes(realPath);
+                    String contentType = getContentType(realPath.toString());
 
-            } else {
+                    out.write(("HTTP/1.1 200 OK\r\n").getBytes());
+                    out.write(("Content-Type: " + contentType + "\r\n").getBytes());
+                    out.write(("Content-Length: " + fileBytes.length + "\r\n").getBytes());
+                    out.write(("\r\n").getBytes());
+                    out.write(fileBytes);
+
+                } else {
+                    send404(out);
+                }
+
+            } catch (IOException e) {
                 send404(out);
             }
 
