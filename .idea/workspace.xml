@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91b2b17c-dc15-49a0-af05-de7e01e06f51" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/simple-http-server/src/main/java/org/example/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-http-server/src/main/java/org/example/HttpServer.java" afterDir="false" />
+    <list default="true" id="91b2b17c-dc15-49a0-af05-de7e01e06f51" name="Changes" comment="Implement simple http server">
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/controller/PaymentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/model/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,18 +24,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "lukianchykov"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lukianchykov&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lukianchykov/payment.git",
-    "accountId": "79cc544f-c48e-4ac3-9a74-e1b870c7246e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lukianchykov/payment.git&quot;,
+    &quot;accountId&quot;: &quot;68563244-86ee-40fa-a2d9-0f9e8ab09a53&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -46,9 +50,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "homework1",
-    "junie.onboarding.icon.badge.shown": "true",
+    "git-widget-placeholder": "homework2",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/lukan/IdeaProjects/payment/payment-service/simple-http-server/static",
     "node.js.detected.package.eslint": "true",
@@ -70,7 +72,7 @@
       <recent name="C:\Users\lukan\IdeaProjects\payment\payment-service\simple-http-server\static" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.HttpServer">
     <configuration name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.HttpServer" />
       <module name="simple-http-server" />
@@ -80,6 +82,13 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PaymentServiceAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="payment-service-app" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.iprody.payment.service.app.PaymentServiceAppApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,12 +116,25 @@
       <option name="presentableId" value="Default" />
       <updated>1768462918050</updated>
       <workItem from="1768462919016" duration="146000" />
-      <workItem from="1768463217801" duration="832000" />
-      <workItem from="1768918323097" duration="399000" />
+      <workItem from="1768463217801" duration="1133000" />
+      <workItem from="1769250326805" duration="537000" />
     </task>
+    <task id="LOCAL-00001" summary="Implement simple http server">
+      <option name="closed" value="true" />
+      <created>1768464141991</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1768464141992</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement simple http server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement simple http server" />
   </component>
 </project>
