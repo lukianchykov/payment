@@ -18,9 +18,9 @@ public class PaymentController {
     @GetMapping("/{guid}")
     public Payment getPaymentById(@PathVariable UUID guid) {
         return paymentRepository.findById(guid)
-                .orElseThrow(() ->
-                        new RuntimeException("Payment not found with guid: " + guid)
-                );
+                .orElseThrow(() -> new RuntimeException(
+                        "Payment not found with guid: " + guid
+                ));
     }
 
     @GetMapping
