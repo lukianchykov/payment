@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91b2b17c-dc15-49a0-af05-de7e01e06f51" name="Changes" comment="Minor changes">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_0/db.changelog-1.0-create-payment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_1/db.changelog-1.1-add-demo-payment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/liquibase.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +57,9 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "homework5",
+    "git-widget-placeholder": "homework6",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lukan/IdeaProjects/payment/payment-service/simple-http-server/static",
+    "last_opened_file_path": "C:/Users/lukan/IdeaProjects/payment/payment-service/payment-service-app/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,6 +76,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lukan\IdeaProjects\payment\payment-service\payment-service-app\src\main\resources" />
       <recent name="C:\Users\lukan\IdeaProjects\payment\payment-service\simple-http-server\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -109,6 +115,7 @@
         <item itemvalue="Application.HttpServer" />
         <item itemvalue="Application.HttpServer" />
         <item itemvalue="Application.HttpServer" />
+        <item itemvalue="Application.HttpServer" />
       </list>
     </recent_temporary>
   </component>
@@ -130,6 +137,8 @@
       <workItem from="1768462919016" duration="146000" />
       <workItem from="1768463217801" duration="1133000" />
       <workItem from="1769250326805" duration="2272000" />
+      <workItem from="1769966148388" duration="6000" />
+      <workItem from="1770538534511" duration="1023000" />
     </task>
     <task id="LOCAL-00001" summary="Implement simple http server">
       <option name="closed" value="true" />
@@ -179,7 +188,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769884048755</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Minor changes">
+      <option name="closed" value="true" />
+      <created>1769884587740</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1769884587740</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
