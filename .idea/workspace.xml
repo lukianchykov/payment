@@ -4,14 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91b2b17c-dc15-49a0-af05-de7e01e06f51" name="Changes" comment="Minor changes">
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/db.changelog-master.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_0/db.changelog-1.0-create-payment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_1/db.changelog-1.1-add-demo-payment.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/liquibase.properties" afterDir="false" />
+    <list default="true" id="91b2b17c-dc15-49a0-af05-de7e01e06f51" name="Changes" comment="Lesson 6. Homework">
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentFilterFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentSpecifications.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/controller/PaymentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +39,10 @@
     &quot;accountId&quot;: &quot;68563244-86ee-40fa-a2d9-0f9e8ab09a53&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -55,11 +60,13 @@
     "Maven.payment-service [checkstyle:check].executor": "Run",
     "Maven.payment-service [clean,package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "homework6",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "homework7",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lukan/IdeaProjects/payment/payment-service/payment-service-app/src/main/resources",
+    "last_opened_file_path": "C:/Users/lukan/IdeaProjects/payment/payment-service/payment-service-app/src/main/java/com/iprody/payment/service/app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +83,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lukan\IdeaProjects\payment\payment-service\payment-service-app\src\main\java\com\iprody\payment\service\app" />
       <recent name="C:\Users\lukan\IdeaProjects\payment\payment-service\payment-service-app\src\main\resources" />
       <recent name="C:\Users\lukan\IdeaProjects\payment\payment-service\simple-http-server\static" />
     </key>
@@ -122,8 +130,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28539.33" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28539.33" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
       </set>
     </attachedChunks>
   </component>
@@ -139,6 +147,8 @@
       <workItem from="1769250326805" duration="2272000" />
       <workItem from="1769966148388" duration="6000" />
       <workItem from="1770538534511" duration="1023000" />
+      <workItem from="1770792690026" duration="218000" />
+      <workItem from="1770792920075" duration="631000" />
     </task>
     <task id="LOCAL-00001" summary="Implement simple http server">
       <option name="closed" value="true" />
