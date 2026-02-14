@@ -1,9 +1,8 @@
 package com.iprody.payment.service.app.controller;
 
+import com.iprody.payment.service.app.dto.PaymentDto;
 import com.iprody.payment.service.app.persistence.PaymentFilter;
-import com.iprody.payment.service.app.persistence.entity.Payment;
 import com.iprody.payment.service.app.service.PaymentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -16,29 +15,32 @@ import java.util.List;
 @RequestMapping("/payments")
 public class PaymentController {
 
-    @Autowired
-    private PaymentService paymentService;
+    private final PaymentService paymentService;
+
+    public PaymentController(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
 
     @GetMapping
-    public List<Payment> findAll() {
+    public List<PaymentDto> findAll() {
         return paymentService.findAll();
     }
 
     @GetMapping("/search")
-    public Page<Payment> search(
+    public Page<PaymentDto> search(
             @ModelAttribute PaymentFilter filter,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "25") int size,
             @RequestParam(defaultValue = "guid") String sortBy,
             @RequestParam(defaultValue = "desc") String direction
     ) {
-        Sort sort = switch (direction) {
+        final Sort sort = switch (direction) {
             case "asc" -> Sort.by(sortBy).ascending();
             case "desc" -> Sort.by(sortBy).descending();
             default -> throw new IllegalArgumentException("Unexpected value: " + direction);
         };
 
-        Pageable pageRequest = PageRequest.of(page, size, sort);
+        final Pageable pageRequest = PageRequest.of(page, size, sort);
         return paymentService.search(filter, pageRequest);
     }
 }

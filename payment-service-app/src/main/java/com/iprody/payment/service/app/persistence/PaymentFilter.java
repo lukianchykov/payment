@@ -13,4 +13,4 @@ public record PaymentFilter (
         Instant createdAfter,
         Instant createdBefore,
         PaymentStatus status
-) {}
+) { }
