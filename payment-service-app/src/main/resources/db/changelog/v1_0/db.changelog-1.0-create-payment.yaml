@@ -37,6 +37,9 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: note
+                  type: text
+              - column:
                   name: created_at
                   type: timestamp with time zone
                   constraints:

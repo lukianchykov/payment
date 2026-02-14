@@ -4,15 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91b2b17c-dc15-49a0-af05-de7e01e06f51" name="Changes" comment="Lesson 6. Homework">
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentFilterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentSpecifications.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/service/PaymentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="91b2b17c-dc15-49a0-af05-de7e01e06f51" name="Changes" comment="Lesson 8. Homework">
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/dto/PaymentDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/mapper/PaymentMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/service/PaymentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkstyle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/PaymentFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/entity/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/persistence/entity/Payment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/service/PaymentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/java/com/iprody/payment/service/app/service/PaymentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_0/db.changelog-1.0-create-payment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_0/db.changelog-1.0-create-payment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_1/db.changelog-1.1-add-demo-payment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/payment-service-app/src/main/resources/db/changelog/v1_1/db.changelog-1.1-add-demo-payment.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,14 +63,23 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HttpServer.executor": "Run",
+    "Docker.payment-service-app.payment-service-app: Compose Deployment.executor": "Run",
+    "Docker.payment-service-app/Dockerfile.executor": "Run",
+    "Docker.payment-service-app: Compose Deployment.executor": "Run",
     "Maven.payment-service [checkstyle:check].executor": "Run",
     "Maven.payment-service [clean,package].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "homework7",
+    "Spring Boot.PaymentServiceAppApplication.executor": "Run",
+    "git-widget-placeholder": "homework8",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/lukan/IdeaProjects/payment/payment-service/payment-service-app/src/main/java/com/iprody/payment/service/app",
     "node.js.detected.package.eslint": "true",
@@ -79,6 +94,11 @@
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -97,7 +117,7 @@
       <command value="mvn clean package" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.HttpServer">
+  <component name="RunManager" selected="Docker.payment-service-app: Compose Deployment">
     <configuration name="HttpServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.HttpServer" />
       <module name="simple-http-server" />
@@ -118,10 +138,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="payment-service-app: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="payment-service-app/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="payment-service-app/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="payment-service-app/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="payment-service-app.payment-service-app: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="payment-service-app" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="payment-service-app/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HttpServer" />
-        <item itemvalue="Application.HttpServer" />
+        <item itemvalue="Docker.payment-service-app: Compose Deployment" />
+        <item itemvalue="Docker.payment-service-app.payment-service-app: Compose Deployment" />
+        <item itemvalue="Docker.payment-service-app/Dockerfile" />
         <item itemvalue="Application.HttpServer" />
         <item itemvalue="Application.HttpServer" />
       </list>
@@ -149,6 +207,7 @@
       <workItem from="1770538534511" duration="1023000" />
       <workItem from="1770792690026" duration="218000" />
       <workItem from="1770792920075" duration="631000" />
+      <workItem from="1771071714111" duration="4784000" />
     </task>
     <task id="LOCAL-00001" summary="Implement simple http server">
       <option name="closed" value="true" />
@@ -218,6 +277,7 @@
     <MESSAGE value="Lesson 3. Homework" />
     <MESSAGE value="Lesson 5. Homework" />
     <MESSAGE value="Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
+    <MESSAGE value="Lesson 8. Homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson 8. Homework" />
   </component>
 </project>
