@@ -64,7 +64,7 @@ public class PaymentController {
                     DateTimeFormat.ISO.DATE_TIME) Instant createdBefore,
             Pageable pageable
     ) {
-        PaymentFilter filter = new PaymentFilter(
+        final PaymentFilter filter = new PaymentFilter(
                 currency,
                 minAmount,
                 maxAmount,

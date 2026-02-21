@@ -29,7 +29,7 @@ public interface PaymentRepository extends JpaRepository<Payment, UUID>, JpaSpec
         update Payment p
            set p.status = :status
          where p.guid = :id
-    """)
+        """)
     int updateStatus(
             @Param("id") UUID id,
             @Param("status") PaymentStatus status
@@ -37,10 +37,10 @@ public interface PaymentRepository extends JpaRepository<Payment, UUID>, JpaSpec
 
     @Modifying
     @Query("""
-    update Payment p
-       set p.note = :note
-     where p.guid = :id
-""")
+        update Payment p
+           set p.note = :note
+         where p.guid = :id
+        """)
     int updateNote(
             @Param("id") UUID id,
             @Param("note") String note

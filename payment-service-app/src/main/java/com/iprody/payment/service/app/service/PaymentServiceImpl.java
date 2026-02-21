@@ -29,9 +29,9 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     public PaymentDto create(PaymentDto dto) {
-        Payment entity = paymentMapper.toEntity(dto);
+        final Payment entity = paymentMapper.toEntity(dto);
         entity.setGuid(null);
-        Payment saved = paymentRepository.save(entity);
+        final Payment saved = paymentRepository.save(entity);
         return paymentMapper.toDto(saved);
     }
 
@@ -45,9 +45,9 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public Page<PaymentDto> search(PaymentFilter filter, Pageable
             pageable) {
-        Specification<Payment> spec =
+        final Specification<Payment> spec =
                 PaymentFilterFactory.fromFilter(filter);
-        Page<Payment> page = paymentRepository.findAll(spec, pageable);
+        final Page<Payment> page = paymentRepository.findAll(spec, pageable);
         return page.map(paymentMapper::toDto);
     }
 
@@ -63,16 +63,16 @@ public class PaymentServiceImpl implements PaymentService {
         if (!paymentRepository.existsById(id)) {
             throw new IllegalArgumentException("Платеж не найден: " + id);
         }
-        Payment updated = paymentMapper.toEntity(dto);
+        final Payment updated = paymentMapper.toEntity(dto);
         updated.setGuid(id);
-        Payment saved = paymentRepository.save(updated);
+        final Payment saved = paymentRepository.save(updated);
         return paymentMapper.toDto(saved);
     }
 
     @Override
     @Transactional
     public PaymentDto updateStatus(UUID id, PaymentStatus status) {
-        int updatedRows = paymentRepository.updateStatus(id, status);
+        final int updatedRows = paymentRepository.updateStatus(id, status);
 
         if (updatedRows == 0) {
             throw new IllegalArgumentException("Платеж не найден: " + id);
@@ -86,7 +86,7 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     @Transactional
     public PaymentDto updateNote(UUID id, String note) {
-        int updatedRows = paymentRepository.updateNote(id, note);
+        final int updatedRows = paymentRepository.updateNote(id, note);
 
         if (updatedRows == 0) {
             throw new IllegalArgumentException("Платеж не найден: " + id);
