@@ -192,6 +192,85 @@ class PaymentServiceTest {
         assertEquals(25, result.getSize());
     }
 
+    @Test
+    void shouldUpdateStatus() {
+        PaymentStatus newStatus = PaymentStatus.DECLINED;
+
+        when(paymentRepository.updateStatus(guid, newStatus))
+                .thenReturn(1);
+        when(paymentRepository.findById(guid))
+                .thenReturn(Optional.of(payment));
+        when(paymentMapper.toDto(payment))
+                .thenReturn(paymentDto);
+
+        PaymentDto result = paymentService.updateStatus(guid, newStatus);
+
+        assertEquals(paymentDto, result);
+
+        verify(paymentRepository).updateStatus(guid, newStatus);
+        verify(paymentRepository).findById(guid);
+        verify(paymentMapper).toDto(payment);
+    }
+
+    @Test
+    void shouldUpdateNote() {
+        String note = "Test note";
+
+        when(paymentRepository.updateNote(guid, note))
+                .thenReturn(1);
+        when(paymentRepository.findById(guid))
+                .thenReturn(Optional.of(payment));
+        when(paymentMapper.toDto(payment))
+                .thenReturn(paymentDto);
+
+        PaymentDto result = paymentService.updateNote(guid, note);
+
+        assertEquals(paymentDto, result);
+
+        verify(paymentRepository).updateNote(guid, note);
+        verify(paymentRepository).findById(guid);
+        verify(paymentMapper).toDto(payment);
+    }
+
+
+
+    @Test
+    void shouldThrowExceptionWhenUpdateStatusAndPaymentNotFound() {
+        PaymentStatus newStatus = PaymentStatus.DECLINED;
+
+        when(paymentRepository.updateStatus(guid, newStatus))
+                .thenReturn(0);
+
+        IllegalArgumentException ex = org.junit.jupiter.api.Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> paymentService.updateStatus(guid, newStatus)
+        );
+
+        assertEquals("Платеж не найден: " + guid, ex.getMessage());
+
+        verify(paymentRepository).updateStatus(guid, newStatus);
+        verify(paymentRepository, org.mockito.Mockito.never()).findById(any());
+    }
+
+    @Test
+    void shouldThrowExceptionWhenUpdateNoteAndPaymentNotFound() {
+        String note = "Test note";
+
+        when(paymentRepository.updateNote(guid, note))
+                .thenReturn(0);
+
+        IllegalArgumentException ex = org.junit.jupiter.api.Assertions.assertThrows(
+                IllegalArgumentException.class,
+                () -> paymentService.updateNote(guid, note)
+        );
+
+        assertEquals("Платеж не найден: " + guid, ex.getMessage());
+
+        verify(paymentRepository).updateNote(guid, note);
+        verify(paymentRepository, org.mockito.Mockito.never()).findById(any());
+    }
+
+
 
     @Test
     void shouldReturnAllPayments() {
