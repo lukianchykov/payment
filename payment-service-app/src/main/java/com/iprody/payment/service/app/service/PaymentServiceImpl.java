@@ -14,13 +14,14 @@ import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
 public class PaymentServiceImpl implements PaymentService {
 
-    private PaymentRepository paymentRepository;
-    private PaymentMapper paymentMapper;
+    private final PaymentRepository paymentRepository;
+    private final PaymentMapper paymentMapper;
 
     public PaymentServiceImpl(PaymentRepository paymentRepository,
                               PaymentMapper paymentMapper) {
@@ -36,10 +37,9 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     @Override
-    public PaymentDto get(UUID id) {
-        return paymentRepository.findById(id)
-                .map(paymentMapper::toDto)
-                .orElseThrow (() -> new IllegalArgumentException("Платеж не найден:" + id));
+    public Optional<PaymentDto> get(UUID id) {
+        return this.paymentRepository.findById(id)
+                .map(paymentMapper::toDto);
     }
 
     @Override
