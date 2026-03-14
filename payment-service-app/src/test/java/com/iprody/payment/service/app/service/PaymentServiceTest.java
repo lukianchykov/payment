@@ -76,10 +76,10 @@ class PaymentServiceTest {
         when(paymentMapper.toDto(payment))
                 .thenReturn(paymentDto);
 
-        PaymentDto result = paymentService.get(guid);
+        Optional<PaymentDto> result = paymentService.get(guid);
 
-        assertEquals(guid, result.getGuid());
-        assertEquals(PaymentStatus.APPROVED, result.getStatus());
+        assertEquals(guid, result.get().getGuid());
+        assertEquals(PaymentStatus.APPROVED, result.get().getStatus());
 
         verify(paymentRepository).findById(guid);
         verify(paymentMapper).toDto(payment);
@@ -113,7 +113,7 @@ class PaymentServiceTest {
         Page<PaymentDto> result = paymentService.search(filter, pageable);
 
         assertEquals(1, result.getTotalElements());
-        assertEquals(status, result.getContent().get(0).getStatus());
+        assertEquals(status, result.getContent().getFirst().getStatus());
 
         verify(paymentRepository)
                 .findAll(any(Specification.class), eq(pageable));

@@ -1,5 +1,6 @@
 package com.iprody.payment.service.app.controller;
 
+import com.iprody.payment.service.app.controller.exception.NotFoundException;
 import com.iprody.payment.service.app.dto.PaymentDto;
 import com.iprody.payment.service.app.dto.PaymentNoteUpdateDto;
 import com.iprody.payment.service.app.dto.PaymentStatusUpdateDto;
@@ -36,7 +37,8 @@ public class PaymentController {
 
     @GetMapping("/{id}")
     public PaymentDto get(@PathVariable UUID id) {
-        return paymentService.get(id);
+        return paymentService.get(id)
+                .orElseThrow(() -> new NotFoundException("Payment not found"));
     }
 
     @GetMapping
