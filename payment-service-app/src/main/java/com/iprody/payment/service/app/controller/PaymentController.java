@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
@@ -31,11 +32,13 @@ public class PaymentController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
+    @PreAuthorize("hasRole('admin')")
     public PaymentDto create(@RequestBody PaymentDto dto) {
         return paymentService.create(dto);
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('admin', 'reader')")
     public PaymentDto get(@PathVariable UUID id) {
         return paymentService.get(id)
                 .orElseThrow(() -> new NotFoundException("Payment not found"));
@@ -47,6 +50,7 @@ public class PaymentController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('admin', 'reader')")
     public Page<PaymentDto> search(
             PaymentFilter filter,
             Pageable pageable
@@ -55,6 +59,7 @@ public class PaymentController {
     }
 
     @GetMapping("/search")
+    @PreAuthorize("hasAnyRole('admin', 'reader')")
     public Page<PaymentDto> search(
             @RequestParam(required = false) String currency,
             @RequestParam(required = false) PaymentStatus status,
@@ -79,6 +84,7 @@ public class PaymentController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasAnyRole('admin')")
     public PaymentDto update(
             @PathVariable UUID id,
             @RequestBody PaymentDto dto
@@ -104,6 +110,7 @@ public class PaymentController {
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('admin')")
     public void delete(@PathVariable UUID id) {
         paymentService.delete(id);
     }
